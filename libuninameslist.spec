@@ -1,12 +1,12 @@
 Summary:	Library with unicode character names list
 Summary(pl):	Biblioteka z list± nazw znaków unicode
 Name:		libuninameslist
-Version:	030713
-Release:	2
+Version:	040701
+Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libuninameslist/%{name}_src-%{version}.tgz
-# Source0-md5:	051a0377d8e1674de9dc8da062b32646
+# Source0-md5:	fb565640e98bfbc5e633caae4a4b95c3
 URL:		http://libuninameslist.sf.net/
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
