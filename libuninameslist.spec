@@ -1,3 +1,4 @@
+%bcond_without	static_libs	# disable static libraries
 Summary:	Library with unicode character names list
 Summary(pl):	Biblioteka z list± nazw znaków unicode
 Name:		libuninameslist
@@ -47,7 +48,7 @@ Statyczna biblioteka libuninameslist.
 %build
 cp -f /usr/share/automake/config.* .
 %configure \
-	--enable-static
+	--%{?with_static_libs:en}%{!?with_static_libs:dis}able-static
 
 %{__make}
 
@@ -75,6 +76,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.la
 %{_includedir}/*.h
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+%endif
