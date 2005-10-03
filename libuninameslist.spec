@@ -1,4 +1,7 @@
+#
+# Conditional build:
 %bcond_without	static_libs	# disable static libraries
+#
 Summary:	Library with unicode character names list
 Summary(pl):	Biblioteka z list± nazw znaków unicode
 Name:		libuninameslist
