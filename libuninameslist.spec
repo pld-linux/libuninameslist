@@ -11,7 +11,7 @@ License:	BSD
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libuninameslist/%{name}_src-%{version}.tgz
 # Source0-md5:	154549efe3a45ed4fa8d4e63ff6dbabf
-URL:		http://libuninameslist.sf.net/
+URL:		http://libuninameslist.sourceforge.net/
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
