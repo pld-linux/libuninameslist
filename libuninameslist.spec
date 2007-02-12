@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# disable static libraries
 #
 Summary:	Library with unicode character names list
-Summary(pl):	Biblioteka z list± nazw znaków unicode
+Summary(pl.UTF-8):   Biblioteka z listÄ… nazw znakÃ³w unicode
 Name:		libuninameslist
 Version:	20060907
 Release:	1
@@ -18,31 +18,31 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Library with unicode character names list.
 
-%description -l pl
-Biblioteka z list± nazw znaków unicode.
+%description -l pl.UTF-8
+Biblioteka z listÄ… nazw znakÃ³w unicode.
 
 %package devel
 Summary:	Header files for libuninameslist library
-Summary(pl):	Pliki nag³ówkowe biblioteki libuninameslist
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki libuninameslist
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libuninameslist library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki libuninameslist.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki libuninameslist.
 
 %package static
 Summary:	Static libuninameslist library
-Summary(pl):	Statyczna biblioteka libuninameslist
+Summary(pl.UTF-8):   Statyczna biblioteka libuninameslist
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libuninameslist library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka libuninameslist.
 
 %prep
