@@ -5,12 +5,12 @@
 Summary:	Library with unicode character names list
 Summary(pl.UTF-8):	Biblioteka z listą nazw znaków unicode
 Name:		libuninameslist
-Version:	20060907
+Version:	20091231
 Release:	1
 License:	BSD
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/libuninameslist/%{name}_src-%{version}.tgz
-# Source0-md5:	e5090105b9f09e76838a0af3220b371d
+Source0:	http://downloads.sourceforge.net/libuninameslist/%{name}-%{version}.tar.bz2
+# Source0-md5:	14f47d50fb0e05c5029298847437feab
 URL:		http://libuninameslist.sourceforge.net/
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -71,16 +71,22 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENSE
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libuninameslist.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libuninameslist.so.0
+%attr(755,root,root) %{_libdir}/libuninameslist-fr.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libuninameslist-fr.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*.h
+%attr(755,root,root) %{_libdir}/libuninameslist.so
+%attr(755,root,root) %{_libdir}/libuninameslist-fr.so
+%{_libdir}/libuninameslist.la
+%{_libdir}/libuninameslist-fr.la
+%{_includedir}/uninameslist.h
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libuninameslist.a
+%{_libdir}/libuninameslist-fr.a
 %endif
