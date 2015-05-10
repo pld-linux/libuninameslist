@@ -6,7 +6,7 @@ Summary:	Library with unicode character names list
 Summary(pl.UTF-8):	Biblioteka z listą nazw znaków unicode
 Name:		libuninameslist
 Version:	20091231
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libuninameslist/%{name}-%{version}.tar.bz2
