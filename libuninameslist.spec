@@ -5,14 +5,14 @@
 Summary:	Library with unicode character names list
 Summary(pl.UTF-8):	Biblioteka z listą nazw znaków unicode
 Name:		libuninameslist
-Version:	20091231
-Release:	2
+Version:	20170807
+Release:	1
 License:	BSD
 Group:		Libraries
-Source0:	http://downloads.sourceforge.net/libuninameslist/%{name}-%{version}.tar.bz2
-# Source0-md5:	14f47d50fb0e05c5029298847437feab
+#Source0Download: https://github.com/fontforge/libuninameslist/releases
+Source0:	https://github.com/fontforge/libuninameslist/releases/download/%{version}/%{name}-dist-%{version}.tar.gz
+# Source0-md5:	4e05adb1e4a53ae6a8be34cfa1bd533a
 URL:		http://libuninameslist.sourceforge.net/
-BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -46,12 +46,13 @@ Static libuninameslist library.
 Statyczna biblioteka libuninameslist.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
-cp -f /usr/share/automake/config.* .
 %configure \
-	--%{?with_static_libs:en}%{!?with_static_libs:dis}able-static
+	--enable-frenchlib \
+	--disable-silent-rules \
+	%{!?with_static_libs:--disable-static}
 
 %{__make}
 
@@ -59,8 +60,10 @@ cp -f /usr/share/automake/config.* .
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	libdir=$RPM_BUILD_ROOT%{_libdir} \
-	incdir=$RPM_BUILD_ROOT%{_includedir}
+	DESTDIR=$RPM_BUILD_ROOT
+
+# no external dependencies
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libuninameslist*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -70,19 +73,19 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE
+%doc AUTHORS ChangeLog LICENSE README README.md
 %attr(755,root,root) %{_libdir}/libuninameslist.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libuninameslist.so.0
+%attr(755,root,root) %ghost %{_libdir}/libuninameslist.so.1
 %attr(755,root,root) %{_libdir}/libuninameslist-fr.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libuninameslist-fr.so.0
+%attr(755,root,root) %ghost %{_libdir}/libuninameslist-fr.so.1
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libuninameslist.so
 %attr(755,root,root) %{_libdir}/libuninameslist-fr.so
-%{_libdir}/libuninameslist.la
-%{_libdir}/libuninameslist-fr.la
 %{_includedir}/uninameslist.h
+%{_includedir}/uninameslist-fr.h
+%{_pkgconfigdir}/libuninameslist.pc
 
 %if %{with static_libs}
 %files static
