@@ -5,13 +5,13 @@
 Summary:	Library with unicode character names list
 Summary(pl.UTF-8):	Biblioteka z listą nazw znaków unicode
 Name:		libuninameslist
-Version:	20200313
+Version:	20211114
 Release:	1
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/fontforge/libuninameslist/releases
 Source0:	https://github.com/fontforge/libuninameslist/releases/download/%{version}/%{name}-dist-%{version}.tar.gz
-# Source0-md5:	0e43d668398edac51fe2b64c3dfd0cf9
+# Source0-md5:	19ee2fd3ccb1a1868b2799dff7a63bf1
 URL:		http://libuninameslist.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
