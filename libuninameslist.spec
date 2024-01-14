@@ -1,17 +1,17 @@
 #
 # Conditional build:
-%bcond_without	static_libs	# disable static libraries
+%bcond_without	static_libs	# static libraries
 #
 Summary:	Library with unicode character names list
 Summary(pl.UTF-8):	Biblioteka z listą nazw znaków unicode
 Name:		libuninameslist
-Version:	20211114
+Version:	20230916
 Release:	1
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/fontforge/libuninameslist/releases
 Source0:	https://github.com/fontforge/libuninameslist/releases/download/%{version}/%{name}-dist-%{version}.tar.gz
-# Source0-md5:	19ee2fd3ccb1a1868b2799dff7a63bf1
+# Source0-md5:	2dd15b7d0ab99dfdf8a6ece1eecf1cb9
 URL:		http://libuninameslist.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
